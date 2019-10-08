@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  identificationcard: 1
+  name: MyString
+  lastname: MyString
+  birthday: 2018-08-12
+  sex: one
+  admissiondate: 2018-08-12
+  departuredate: 2018-08-12
+  salary: 9.99
+
+two:
+  identificationcard: 1
+  name: MyString
+  lastname: MyString
+  birthday: 2018-08-12
+  sex: two
+  admissiondate: 2018-08-12
+  departuredate: 2018-08-12
+  salary: 9.99

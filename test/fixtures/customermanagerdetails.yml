@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  officenumber: MyString
+  extension: MyString
+  cellnumber: MyString
+  faxnumber: MyString
+  officialemail: MyString
+  secundaryemail: MyString
+  customermanager: one
+
+two:
+  officenumber: MyString
+  extension: MyString
+  cellnumber: MyString
+  faxnumber: MyString
+  officialemail: MyString
+  secundaryemail: MyString
+  customermanager: two
