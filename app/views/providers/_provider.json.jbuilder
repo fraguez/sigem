@@ -1,0 +1,2 @@
+json.extract! provider, :id, :legalcertificate, :name, :businessname, :provider_type_id, :city_id, :state_id, :district_id, :othersing, :created_at, :updated_at
+json.url provider_url(provider, format: :json)

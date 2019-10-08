@@ -1,0 +1,1 @@
+json.array! @providermanagers, partial: 'providermanagers/providermanager', as: :providermanager

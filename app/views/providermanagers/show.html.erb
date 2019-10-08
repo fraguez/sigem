@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        <div class="invoice-title">
+          <h2>Encargado</h2>
+          <h3 class="pull-right"><%= @providermanager.provider ? @providermanager.provider.name : '' %></h3>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <address>
+              <strong>Cédula de Identidad:</strong><br>
+              <%= @providermanager.identificationcard %><br>
+            </address>
+            <address>
+              <strong>Nombre del Encargado:</strong><br>
+              <%= @providermanager.name %>
+              <%= @providermanager.lastname %><br><br>
+            </address>
+          </div>
+          <div class="col-xs-6 text-right">
+            <address>
+              <strong>Fecha de Nacimiento:</strong><br>
+              <%= @providermanager.birthday.strftime("%d/%m/%Y") %><br><br>
+            </address>
+            <address>
+              <strong>Género:</strong><br>
+              <%= @providermanager.sex ? @providermanager.sex.description : '' %><br><br>
+            </address>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><strong>Detalles del Encargado</strong></h3>
+              </div>
+              <div class="panel-body">
+                <%= render partial: 'table', locals: { providermanager: @providermanager } %>
+                <br/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<%= link_to 'Volver', providermanagers_path %>

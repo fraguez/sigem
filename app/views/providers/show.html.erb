@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Legalcertificate:</strong>
+  <%= @provider.legalcertificate %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @provider.name %>
+</p>
+
+<p>
+  <strong>Businessname:</strong>
+  <%= @provider.businessname %>
+</p>
+
+<p>
+  <strong>Provider type:</strong>
+  <%= @provider.provider_type %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @provider.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @provider.state %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @provider.district %>
+</p>
+
+<p>
+  <strong>Othersing:</strong>
+  <%= @provider.othersing %>
+</p>
+
+<%= link_to 'Edit', edit_provider_path(@provider) %> |
+<%= link_to 'Back', providers_path %>

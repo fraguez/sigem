@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(provider_type) do |f| %>
+        <% if provider_type.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(provider_type.errors.count, "error") %> prohibited this provider_type from being saved:</h2>
+
+            <ul>
+            <% provider_type.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :provider_type_id, "Tipo de Proveedor" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :description, autofocus: true, placeholder: "Descripción", class: "form-control" %>
+          </div>
+        </div>
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
