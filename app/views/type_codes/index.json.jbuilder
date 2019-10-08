@@ -1,0 +1,1 @@
+json.array! @type_codes, partial: 'type_codes/type_code', as: :type_code

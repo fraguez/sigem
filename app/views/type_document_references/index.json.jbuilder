@@ -1,0 +1,1 @@
+json.array! @type_document_references, partial: 'type_document_references/type_document_reference', as: :type_document_reference

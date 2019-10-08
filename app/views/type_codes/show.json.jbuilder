@@ -1,0 +1,1 @@
+json.partial! "type_codes/type_code", type_code: @type_code

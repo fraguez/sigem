@@ -1,0 +1,1 @@
+json.partial! "type_vouchers/type_voucher", type_voucher: @type_voucher

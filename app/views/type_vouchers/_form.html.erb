@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(type_voucher) do |f| %>
+        <% if type_voucher.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(type_voucher.errors.count, "error") %> prohibited this type_voucher from being saved:</h2>
+
+            <ul>
+            <% type_voucher.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :name, "Tipo de Comprobante" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :name, autofocus: true, placeholder: "Nombre", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :label, "Etiqueta" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :label, autofocus: true, placeholder: "Etiqueta", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :acronym, "Siglas" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :acronym, autofocus: true, placeholder: "Siglas", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :xmlSchema, "XML Schema" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :xmlSchema, autofocus: true, placeholder: "XML Schema", class: "form-control" %>
+          </div>
+        </div>
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

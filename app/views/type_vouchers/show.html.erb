@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @type_voucher.name %>
+</p>
+
+<p>
+  <strong>Label:</strong>
+  <%= @type_voucher.label %>
+</p>
+
+<p>
+  <strong>Acronym:</strong>
+  <%= @type_voucher.acronym %>
+</p>
+
+<p>
+  <strong>Xmlschema:</strong>
+  <%= @type_voucher.xmlSchema %>
+</p>
+
+<%= link_to 'Edit', edit_type_voucher_path(@type_voucher) %> |
+<%= link_to 'Back', type_vouchers_path %>

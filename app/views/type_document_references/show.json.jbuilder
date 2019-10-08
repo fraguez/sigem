@@ -1,0 +1,1 @@
+json.partial! "type_document_references/type_document_reference", type_document_reference: @type_document_reference
