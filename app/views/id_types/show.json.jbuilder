@@ -1,0 +1,1 @@
+json.partial! "id_types/id_type", id_type: @id_type

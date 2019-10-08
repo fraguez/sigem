@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+        <div class="invoice-title">
+          <h2>Empleado</h2>
+          <h3 class="pull-right">Registro de Entradas</h3>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-xs-6 text-left">
+            <address>
+              <strong>Cédula de Identidad:</strong><br>
+              <%= @employee.identificationcard %><br>
+            </address>
+            <address>
+              <strong>Nombre del Encargado:</strong><br>
+              <%= @employee.name %>
+              <%= @employee.lastname %><br><br>
+            </address>
+            <address>
+              <strong>Salario:</strong><br>
+              <%= number_to_currency(@employee.salary,  unit: "¢") %><br><br>
+            </address>
+          </div>
+          <div class="col-xs-6 text-right">
+            <address>
+              <strong>Fecha de Nacimiento:</strong><br>
+              <%= @employee.birthday.strftime("%d/%m/%Y") %><br><br>
+            </address>
+            <address>
+              <strong>Género:</strong><br>
+              <%= @employee.sex ? @employee.sex.description : '' %><br><br>
+            </address>
+            <address>
+              <strong>Fecha de Ingreso:</strong><br>
+              <%= @employee.admissiondate.strftime("%d/%m/%Y") %><br><br>
+            </address>
+            <address>
+              <strong>Fecha de Retiro:</strong><br>
+              <%= @employee.departuredate.strftime("%d/%m/%Y") %><br><br>
+            </address>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title"><strong>Registro de Entradas</strong></h3>
+              </div>
+              <div class="panel-body">
+                <%= render partial: 'tableCheckIn', locals: { employee: @employee } %>
+                <br/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<%= link_to 'Volver', customermanagers_path %>

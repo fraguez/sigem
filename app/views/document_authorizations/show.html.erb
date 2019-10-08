@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @document_authorization.name %>
+</p>
+
+<p>
+  <strong>Code:</strong>
+  <%= @document_authorization.code %>
+</p>
+
+<%= link_to 'Edit', edit_document_authorization_path(@document_authorization) %> |
+<%= link_to 'Back', document_authorizations_path %>

@@ -1,0 +1,20 @@
+<% show_actions = show_actions.nil? ? false : show_actions %>
+
+<div class="table-responsive">
+	<table class="table table-condensed">
+		<thead>
+            <tr>
+				<td><strong>Fecha de Entrada</strong></td>				
+				<%= show_actions ? '<td colspan="2"></td>'.html_safe : "" %> 
+            </tr>
+		</thead>
+		<tbody>
+			<div id="check_ins-index">
+				<%= render partial: "check_ins/index", locals: {show_actions: show_actions} %>
+			</div>
+			<tr>
+				<%= show_actions ? '<td colspan="2" class=""></td>'.html_safe : "" %> 
+			</tr>
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,1 @@
+json.partial! "document_authorizations/document_authorization", document_authorization: @document_authorization

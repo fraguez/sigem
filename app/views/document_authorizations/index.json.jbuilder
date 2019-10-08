@@ -1,0 +1,1 @@
+json.array! @document_authorizations, partial: 'document_authorizations/document_authorization', as: :document_authorization

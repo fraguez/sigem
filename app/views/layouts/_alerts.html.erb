@@ -1,0 +1,18 @@
+<div class="container-fluid">
+	<div class="row">
+    	<% if notice.present? %>
+    		<script>
+				sweetAlert({ title: "<%= notice %>", type: "success", timer: 3000, 
+				showConfirmButton: false, closeOnConfirm: true });
+			</script>
+		<% end %>
+
+		<% if alert.present? %>
+		  	<script>
+				sweetAler({ title: "<%= notice %>", type: "error", timer: 3000, 
+				showConfirmButton: false, closeOnConfirm: true });
+			</script>
+		  	
+		<% end %>
+	</div>
+</div>
