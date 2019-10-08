@@ -1,0 +1,22 @@
+
+default: &default
+  adapter: postgresql
+  user: postgres
+  password: Nuevo123*
+  pool: 5
+  timeout: 5000
+  host: localhost
+
+development:
+  <<: *default
+  database: sigem_development
+  
+test:
+  <<: *default
+  database: sigem_test
+
+production:
+  <<: *default
+  database: sigemgm_production
+  username: postgres #shopgm
+  password: Nuevo123* #<%= ENV['MYAPP_DATABASE_PASSWORD']
