@@ -1,0 +1,2 @@
+module ConditionSalesHelper
+end

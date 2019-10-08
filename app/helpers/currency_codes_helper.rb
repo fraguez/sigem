@@ -1,0 +1,2 @@
+module CurrencyCodesHelper
+end

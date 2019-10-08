@@ -1,0 +1,2 @@
+module DocumentAuthorizationsHelper
+end
