@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(check_in) do |f| %>
+        <% if check_in.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(check_in.errors.count, "error") %> prohibited this check_in from being saved:</h2>
+
+            <ul>
+            <% check_in.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :employee_id, "Empleado" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.collection_select :employee_id, @employees, :id, :identificationcard, 
+                  {selected: @check_in.employee_id, include_blank: 'Seleccione el Empleado'},
+                  {class: "form-control"} %>
+          </div>
+
+          <div class="col-xs-2">
+            <%= f.label :employee_file, "Archivo" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.field_tag :file %>
+            <%= f.submit "Importar", class: "btn btn-success" %>
+          </div>
+        </div>
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

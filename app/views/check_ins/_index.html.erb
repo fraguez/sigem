@@ -1,0 +1,8 @@
+<% @employee.check_ins.each do |check_in| %>
+	<tr>
+		<td><%= check_in.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+		<% if show_actions %>
+			<td><%= link_to "Eliminar", employee.check_in_path(check_in.employee.id, check_in.id), method: :delete, remote: true %> </td>
+		<% end %>
+	</tr>
+<% end %>

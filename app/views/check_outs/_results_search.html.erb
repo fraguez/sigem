@@ -1,0 +1,26 @@
+<table class="table">
+  <thead>
+    <tr>
+      <%= render partial: "pager", locals: { keywords: @keywords, page: @page } %>
+    </tr>
+    <tr>
+      <th>Nombre del Empleado</th>
+      <th>Fecha de Salida</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @check_outs.each do |check_out| %>
+      <tr>
+        <td><%= check_out.employee ? check_out.employee.name + ' ' + check_out.employee.lastname : '' %></td>
+        <td><%= check_out.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+        <td>
+          <%= button_to check_out, { method: :delete, data: { confirm: '¿Está seguro?' }, class: "btn btn-danger" } do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Eliminar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

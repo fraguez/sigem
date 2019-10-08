@@ -1,0 +1,33 @@
+<table class="table">
+  <thead>
+    <tr>
+      <%= render partial: "pager", locals: { keywords: @keywords, page: @page } %>
+    </tr>
+    <tr>
+      <th>Nombre</th>
+      <th>Fecha de Alta</th>
+      <th>Fecha de Modificación</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= city.name %></td>
+        <td><%= city.created_at.strftime("%d/%m/%Y") %></td>
+        <td><%= city.updated_at.strftime("%d/%m/%Y") %></td>
+        <td>
+          <%= button_to edit_city_path(city), {method: :get, class: "btn btn-info"} do %>
+            <span class="glyphicon glyphicon-pencil" aria-hidden="true"> </span> Editar
+          <% end %>
+        </td>
+        <td>
+          <%= button_to city, { method: :delete, data: { confirm: '¿Está seguro?' }, class: "btn btn-danger" } do %>
+            <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Eliminar
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
