@@ -1,0 +1,1 @@
+json.partial! "currency_codes/currency_code", currency_code: @currency_code

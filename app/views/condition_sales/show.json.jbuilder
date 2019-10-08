@@ -1,0 +1,1 @@
+json.partial! "condition_sales/condition_sale", condition_sale: @condition_sale

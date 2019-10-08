@@ -1,0 +1,25 @@
+<% show_actions = show_actions.nil? ? false : show_actions %>
+
+<div class="table-responsive">
+	<table class="table table-condensed">
+		<thead>
+            <tr>
+				<td><strong>Nº de Oficina</strong></td>
+				<td><strong>Extensión(es)</strong></td>
+				<td><strong>Nº de Celular</strong></td>
+				<td><strong>Nº de Fax</strong></td>
+				<td><strong>Correo Oficial</strong></td>
+				<td><strong>Correo Secundario</strong></td>
+				<%= show_actions ? '<td colspan="2"></td>'.html_safe : "" %> 
+            </tr>
+		</thead>
+		<tbody>
+			<div id="customermanagerdetails-index">
+				<%= render partial: "customermanagerdetails/index", locals: {show_actions: show_actions} %>
+			</div>
+			<tr>
+				<%= show_actions ? '<td colspan="2" class=""></td>'.html_safe : "" %> 
+			</tr>
+		</tbody>
+	</table>
+</div>

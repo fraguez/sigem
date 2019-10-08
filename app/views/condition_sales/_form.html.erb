@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(condition_sale) do |f| %>
+        <% if condition_sale.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(condition_sale.errors.count, "error") %> prohibited this condition_sale from being saved:</h2>
+
+            <ul>
+            <% condition_sale.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :name, "Condición de la Venta" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :name, autofocus: true, placeholder: "Nombre", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :code, "Código" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.number_field :code, autofocus: true, placeholder: "Código", class: "form-control" %>
+          </div>
+        </div>        
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

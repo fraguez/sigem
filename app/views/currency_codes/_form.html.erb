@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(currency_code) do |f| %>
+        <% if currency_code.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(currency_code.errors.count, "error") %> prohibited this currency_code from being saved:</h2>
+
+            <ul>
+            <% currency_code.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :country, "Nombre del País" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :country, autofocus: true, placeholder: "Nombre del País", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :name, "Nombre de la Moneda" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :name, autofocus: true, placeholder: "Nombre de la Moneda", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :code, "Código" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :code, autofocus: true, placeholder: "Código de la Moneda", class: "form-control" %>
+          </div>
+        </div>        
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+

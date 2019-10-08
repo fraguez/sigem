@@ -1,0 +1,1 @@
+json.array! @condition_sales, partial: 'condition_sales/condition_sale', as: :condition_sale

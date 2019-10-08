@@ -1,0 +1,112 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(customer) do |f| %>
+        <% if customer.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+            <ul>
+            <% customer.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :legalcertificate, "Cédula Jurídica" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :legalcertificate, placeholder: "3-101-111111", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :name, "Nombre de la Empresa" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :name, placeholder: "FRAGUEZ", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :businessname, "Razón Social" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :businessname, placeholder: "FRAGUEZ S.A.", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :customer_type_id, "Tipo de Empresa" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.collection_select :customer_type_id, @customer_types, :id, :name, 
+                  {selected: @customer.customer_type_id, include_blank: 'Tipo de Empresa'},
+                  {class: "form-control"} %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :city_id, "Provincia" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.collection_select :city_id, @cities, :id, :name, 
+                  {selected: @customer.city_id, include_blank: 'Seleccione Provincia'},
+                  {class: "form-control"} %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :state_id, "Cantón" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.grouped_collection_select :state_id, @cities, :states, :name, :id, :name, 
+                  {selected: @customer.state_id, include_blank: 'Seleccione Cantón'},
+                  {class: "form-control"} %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :district_id, "Distrito" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.grouped_collection_select :district_id, @states, :districts, :name, :id, :name, 
+                  {selected: @customer.district_id, include_blank: 'Seleccione Distrito'},
+                  {class: "form-control"} %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :neighborhood_id, "Barrio" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.grouped_collection_select :neighborhood_id, @districts, :neighborhoods, :name, :id, :name, 
+                  {selected: @customer.neighborhood_id, include_blank: 'Seleccione Barrio'},
+                  {class: "form-control"} %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :othersing, "Otras Señas" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_area :othersing, placeholder: "100 mts norte de Tributación Directa", class: "form-control" %>
+          </div>
+        </div>
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

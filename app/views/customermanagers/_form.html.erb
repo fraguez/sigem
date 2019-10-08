@@ -1,0 +1,129 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="panel-body">
+      <%= form_for(customermanager) do |f| %>
+        <% if customermanager.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(customermanager.errors.count, "error") %> prohibited this customermanager from being saved:</h2>
+
+            <ul>
+            <% customermanager.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :customer_id, "Cliente" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.collection_select :customer_id, @customers, :id, :name, 
+                  {selected: @customermanager.customer_id, include_blank: 'seleccione el Cliente'},
+                  {class: "form-control"} %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :identificationcard, "Cédula de Identidad" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :identificationcard, placeholder: "Cédula de Identidad", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :name, "Nombre del Encargado" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :name, placeholder: "Nombre del Encargado", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :lastname, "Apellidos del Encargado" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.text_field :lastname, placeholder: "Apellidos del Encargado", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :birthday, "Fecha de Nacimiento" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.date_field :birthday, placeholder: "Fecha de Nacimiento", class: "form-control" %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-xs-2">
+            <%= f.label :sex_id, "Género" %>
+          </div>
+          <div class="col-xs-10">
+            <%= f.collection_select :sex_id, @sexes, :id, :description, 
+                  {selected: @customermanager.sex_id, include_blank: 'Seleccione el Género'},
+                  {class: "form-control"} %>
+          </div>
+        </div>
+
+        <hr>
+
+        <h2>Detalles del Encargado</h2>
+
+        <%= f.fields_for :customermanagerdetails do | detail | %>
+          <div class="form-group row">
+            <div class="col-xs-2">
+              <%= detail.label :officenumber, "Número de Oficina" %>
+            </div>
+            <div class="col-xs-5">
+              <%= detail.text_field :officenumber, placeholder: "2460-3333", class: "form-control" %>
+            </div>
+            <div class="col-xs-1">
+              <%= detail.label :extension, "Extensión(es)" %>
+            </div>
+            <div class="col-xs-4">
+              <%= detail.text_field :extension, placeholder: "7777 / 8888 / 9999", class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-xs-2">
+              <%= detail.label :cellnumber, "Número de Celular" %>
+            </div>
+            <div class="col-xs-5">
+              <%= detail.text_field :cellnumber, placeholder: "8888-8888", class: "form-control" %>
+            </div>
+            <div class="col-xs-1">
+              <%= detail.label :faxnumber, "Número de Fax" %>
+            </div>
+            <div class="col-xs-4">
+              <%= detail.text_field :faxnumber, placeholder: "2460-2222", class: "form-control" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-xs-2">
+              <%= detail.label :officialemail, "Correo Oficial" %>
+            </div>
+            <div class="col-xs-5">
+              <%= detail.text_field :officialemail, placeholder: "ejemplo@fraguez.com", class: "form-control" %>
+            </div>
+            <div class="col-xs-1">
+              <%= detail.label :secundaryemail, "Correo Secundario" %>
+            </div>
+            <div class="col-xs-4">
+              <%= detail.text_field :secundaryemail, placeholder: "ejemplo@fraguez.com", class: "form-control" %>
+            </div>
+          </div>
+          <hr>
+        <% end %>
+
+        <%= f.submit "Aceptar", class: "btn btn-success" %>
+      <% end %>
+    </div>
+  </div>
+</div>

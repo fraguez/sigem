@@ -1,0 +1,13 @@
+<% @customermanager.customermanagerdetails.each do |detail| %>
+	<tr>
+		<td><%= detail.officenumber %></td>
+		<td><%= detail.extension %></td>
+		<td><%= detail.cellnumber %></td>
+		<td><%= detail.faxnumber %></td>
+		<td><%= detail.officialemail %></td>
+		<td><%= detail.secundaryemail %></td>
+		<% if show_actions %>
+			<td><%= link_to "Eliminar", customermanager_customermanagerdetail_path(detail.customermanager.id, detail.id), method: :delete, remote: true %> </td>
+		<% end %>
+	</tr>
+<% end %>
